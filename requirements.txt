@@ -1,0 +1,10 @@
+streamlit
+streamlit-authenticator
+pandas
+numpy
+gspread
+oauth2client
+plotly
+matplotlib==3.8.4
+pyyaml
+pyarrow==15.0.2
