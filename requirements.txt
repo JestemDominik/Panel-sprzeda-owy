@@ -6,5 +6,4 @@ gspread
 oauth2client
 plotly
 matplotlib==3.8.4
-pyarrow==14.0.2
 PyYAML
