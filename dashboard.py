@@ -9,19 +9,44 @@ from pathlib import Path
 from utils.data_loader import load_sales_data
 
 # ------------------- ŁADOWANIE KONFIGURACJI -------------------
-def load_authenticator(config_path=Path("credentials/credentials.yaml")):
-    with open(config_path) as file:
-        config = yaml.load(file, Loader=SafeLoader)
+def load_authenticator():
+    # Budowanie struktury z secrets
+    creds = {
+        'usernames': {
+            "rwasikiewicz": {
+                "name": st.secrets["auth.credentials.usernames.rwasikiewicz"]["name"],
+                "password": st.secrets["auth.credentials.usernames.rwasikiewicz"]["password"],
+                "role": st.secrets["auth.credentials.usernames.rwasikiewicz"]["role"],
+            },
+            "dwasikiewicz": {
+                "name": st.secrets["auth.credentials.usernames.dwasikiewicz"]["name"],
+                "password": st.secrets["auth.credentials.usernames.dwasikiewicz"]["password"],
+                "role": st.secrets["auth.credentials.usernames.dwasikiewicz"]["role"],
+            },
+        }
+    }
+
+    config = {
+        "credentials": creds,
+        "cookie": {
+            "name": st.secrets["auth_cookie_name"],
+            "key": st.secrets["auth_cookie_key"],
+            "expiry_days": st.secrets["auth_cookie_expiry_days"]
+        },
+        "preauthorized": {
+            "emails": st.secrets["auth_preauthorized_emails"]
+        }
+    }
 
     authenticator = stauth.Authenticate(
-        config['credentials'],
-        config['cookie']['name'],
-        config['cookie']['key'],
-        config['cookie']['expiry_days'],
-        config['preauthorized']
+        config["credentials"],
+        config["cookie"]["name"],
+        config["cookie"]["key"],
+        config["cookie"]["expiry_days"],
+        config["preauthorized"]
     )
-    return authenticator, config
 
+    return authenticator, config
 
 # ------------------- GŁÓWNA APLIKACJA -------------------
 st.set_page_config(page_title="Sales Dashboard", page_icon="📊", layout="wide")
