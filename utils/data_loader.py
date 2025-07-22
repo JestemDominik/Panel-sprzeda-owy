@@ -1,15 +1,9 @@
-#Łączy się z Google Sheets API
-#Wczytuje dane jako pandas.DataFrame
-#Czyści dane (np. konwersja dat, kolumny liczbowe)
-#Zawiera ewentualne cache (@st.cache_data)
-
 import gspread
 import pandas as pd
 from oauth2client.service_account import ServiceAccountCredentials
 from pathlib import Path
 import streamlit as st
 
-# Łączenie się z Google Sheets przez konto serwisowe
 def load_sales_data(sheet_name: str, worksheet_name: str) -> pd.DataFrame:
     
     credentials_dict = {
@@ -58,14 +52,12 @@ IaDu9D32FHnyUuNweND+9uRB6w==
         "https://www.googleapis.com/auth/drive"
     ]
     
-    creds = ServiceAccountCredentials.from_json_keyfile_name(cred_path, scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials_dict, scope)
     client = gspread.authorize(creds)
 
-    # Pobierz arkusz
     sheet = client.open(sheet_name)
     worksheet = sheet.worksheet(worksheet_name)
 
-    # Wczytaj dane jako DataFrame
     data = worksheet.get("A2:N10")
     headers = worksheet.row_values(1)[:14]  
     df = pd.DataFrame(data, columns=headers)
@@ -128,14 +120,12 @@ IaDu9D32FHnyUuNweND+9uRB6w==
         "https://www.googleapis.com/auth/drive"
     ]
     
-    creds = ServiceAccountCredentials.from_json_keyfile_name(cred_path, scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials_dict, scope)
     client = gspread.authorize(creds)
 
-    # Pobierz arkusz
     sheet = client.open(sheet_name)
     worksheet = sheet.worksheet(worksheet_name)
 
-    # Wczytaj dane jako DataFrame
     data = worksheet.get("A2:M5") #data = worksheet.get_all_records()  # Zwraca listę list (bez nagłówków)
     headers = worksheet.row_values(1)[:13]  # Pobierz nagłówki z pierwszego wiersza, kolumny A–E
     df = pd.DataFrame(data, columns=headers)
