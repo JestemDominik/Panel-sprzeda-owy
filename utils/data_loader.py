@@ -10,15 +10,18 @@ from pathlib import Path
 import streamlit as st
 
 # Łączenie się z Google Sheets przez konto serwisowe
-def load_sales_data(sheet_name: str, worksheet_name: str) -> pd.DataFrame: #, year=2025
-    # Ścieżka do credentials
-    cred_path = Path("credentials/google_credentials.json")
+def load_sales_data(sheet_name: str, worksheet_name: str) -> pd.DataFrame:
+    
+    try:
+        credentials_dict = dict(st.secrets["GOOGLE_CREDENTIALS"])
+    except Exception as e:
+        raise ValueError("Nie udało się załadować danych z GOOGLE_CREDENTIALS ze streamlit secrets") from e
 
     scope = [
         "https://spreadsheets.google.com/feeds",
         "https://www.googleapis.com/auth/drive"
     ]
-
+    
     creds = ServiceAccountCredentials.from_json_keyfile_name(cred_path, scope)
     client = gspread.authorize(creds)
 
@@ -42,14 +45,17 @@ def load_sales_data(sheet_name: str, worksheet_name: str) -> pd.DataFrame: #, ye
     return df
 
 def load_channel_data(sheet_name: str, worksheet_name: str) -> pd.DataFrame:
-    # Ścieżka do credentials
-    cred_path = Path("credentials/google_credentials.json")
+
+    try:
+        credentials_dict = dict(st.secrets["GOOGLE_CREDENTIALS"])
+    except Exception as e:
+        raise ValueError("Nie udało się załadować danych z GOOGLE_CREDENTIALS ze streamlit secrets") from e
 
     scope = [
         "https://spreadsheets.google.com/feeds",
         "https://www.googleapis.com/auth/drive"
     ]
-
+    
     creds = ServiceAccountCredentials.from_json_keyfile_name(cred_path, scope)
     client = gspread.authorize(creds)
 
