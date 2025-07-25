@@ -14,9 +14,9 @@ import base64
 
 # SKUP SIĘ NA TYM CO KLIENT CHCE ZOBACZYĆ
 # --- ŁADOWANIE DANYCH ---
-df = load_sales_data(sheet_name="Dane do panelu sprzedaży", worksheet_name="Obrót", json_path="asepta-test.json") #Produkty , year=st.session_state['year']
-df1 = load_channel_data(sheet_name="Dane do panelu sprzedaży", worksheet_name="Kanał", json_path="asepta-test.json") # Kanały
-df2 = load_channel_data(sheet_name="Dane do panelu sprzedaży", worksheet_name="Grupy klientów", json_path="asepta-test.json")
+df = load_sales_data(sheet_url="https://docs.google.com/spreadsheets/d/1Y-OsqxCR29SNlnNJWM53tG30KrckSl_V6dwl_mZKFzI/edit?usp=sharing", worksheet_name="Obrót") #Produkty , year=st.session_state['year']
+df1 = load_channel_data(sheet_url="https://docs.google.com/spreadsheets/d/1Y-OsqxCR29SNlnNJWM53tG30KrckSl_V6dwl_mZKFzI/edit?usp=sharing", worksheet_name="Kanał") # Kanały
+df2 = load_channel_data(sheet_url="https://docs.google.com/spreadsheets/d/1Y-OsqxCR29SNlnNJWM53tG30KrckSl_V6dwl_mZKFzI/edit?usp=sharing", worksheet_name="Grupy klientów")
 
 # --- ŁADOWANIE OBRAZÓW ---
 def get_image_base64(path):
