@@ -4,17 +4,10 @@ from oauth2client.service_account import ServiceAccountCredentials
 from pathlib import Path
 import streamlit as st
 
-def load_sales_data(sheet_name: str, worksheet_name: str, json_path: str) -> pd.DataFrame:
-    
-    scope = [
-        "https://spreadsheets.google.com/feeds",
-        "https://www.googleapis.com/auth/drive"
-    ]
+def load_sales_data(sheet_url: str, worksheet_name: str) -> pd.DataFrame:
 
-    creds = ServiceAccountCredentials.from_json_keyfile_name(json_path, scope)
-    client = gspread.authorize(creds)
-
-    sheet = client.open(sheet_name)
+    client = gspread.public()
+    sheet = client.open_by_url(sheet_url)
     worksheet = sheet.worksheet(worksheet_name)
 
     data = worksheet.get("A2:N10")
@@ -31,17 +24,10 @@ def load_sales_data(sheet_name: str, worksheet_name: str, json_path: str) -> pd.
 
     return df
 
-def load_channel_data(sheet_name: str, worksheet_name: str, json_path: str) -> pd.DataFrame:
+def load_sales_data(sheet_url: str, worksheet_name: str) -> pd.DataFrame:
 
-    scope = [
-        "https://spreadsheets.google.com/feeds",
-        "https://www.googleapis.com/auth/drive"
-    ]
-
-    creds = ServiceAccountCredentials.from_json_keyfile_name(json_path, scope)
-    client = gspread.authorize(creds)
-
-    sheet = client.open(sheet_name)
+    client = gspread.public()
+    sheet = client.open_by_url(sheet_url)
     worksheet = sheet.worksheet(worksheet_name)
 
     data = worksheet.get("A2:M5") #data = worksheet.get_all_records()  # Zwraca listę list (bez nagłówków)
