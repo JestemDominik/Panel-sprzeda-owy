@@ -6,13 +6,11 @@ import streamlit as st
 
 def load_sales_data(sheet_url: str, worksheet_name: str) -> pd.DataFrame:
 
-    client = gspread.public()
+    client = gspread.Client(auth=None)
+    client.session = gspread.httpsession.HTTPSession()
+
     sheet = client.open_by_url(sheet_url)
     worksheet = sheet.worksheet(worksheet_name)
-
-    data = worksheet.get("A2:N10")
-    headers = worksheet.row_values(1)[:14]  
-    df = pd.DataFrame(data, columns=headers)
     
 
     df.dropna(how='all', inplace=True)
@@ -26,7 +24,9 @@ def load_sales_data(sheet_url: str, worksheet_name: str) -> pd.DataFrame:
 
 def load_sales_data(sheet_url: str, worksheet_name: str) -> pd.DataFrame:
 
-    client = gspread.public()
+    client = gspread.Client(auth=None)
+    client.session = gspread.httpsession.HTTPSession()
+
     sheet = client.open_by_url(sheet_url)
     worksheet = sheet.worksheet(worksheet_name)
 
