@@ -14,9 +14,9 @@ import base64
 
 # SKUP SIĘ NA TYM CO KLIENT CHCE ZOBACZYĆ
 # --- ŁADOWANIE DANYCH ---
-df = load_sales_data(sheet_name="Dane do panelu sprzedaży", worksheet_name="Obrót") #Produkty , year=st.session_state['year']
-df1 = load_channel_data(sheet_name="Dane do panelu sprzedaży", worksheet_name="Kanał") # Kanały
-df2 = load_channel_data(sheet_name="Dane do panelu sprzedaży", worksheet_name="Grupy klientów")
+df = load_sales_data(sheet_name="Dane do panelu sprzedaży", worksheet_name="Obrót", 'asepta-4e6acac849fa.json') #Produkty , year=st.session_state['year']
+df1 = load_channel_data(sheet_name="Dane do panelu sprzedaży", worksheet_name="Kanał", 'asepta-4e6acac849fa.json') # Kanały
+df2 = load_channel_data(sheet_name="Dane do panelu sprzedaży", worksheet_name="Grupy klientów", 'asepta-4e6acac849fa.json')
 
 # --- ŁADOWANIE OBRAZÓW ---
 def get_image_base64(path):
