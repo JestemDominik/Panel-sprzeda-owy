@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "asepta",
+  "private_key_id": "d8e8c0935e30c1391b018331778c3669e27006e4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCWORoGmbCR3wsd\nt78gK02XqBIxsNUABgR7ddU9WKiCwTnnqdHKElBicDd42lehGfmTxLJh0ihhDV4m\n1tJzGJF/1M9QsHAE3frCFUMQUy+4gOF4+s5Mb64oqT4tXt4KyI+QX+jYpGQ/mHwo\nLNumuPSJPa6o0GDtw+Wl7rSWx55T19vdkK0ThoyQGr+OQOZFlE42tbWgLnWuOA6A\nRRmGTW49nCcAgvVc18szc9uFlJDYIuC54P2+55Fdhfxi0b/JNaF53OE8VOiVDILP\nAGy1Fu56Hqmg4muyYOjusN3Qmj96e+5WDB6hgGSfkdRTgvf2oepMZhoJIpCH4jfN\ny0Ka3CJ9AgMBAAECggEAEe7UIAiVzvwY2B3Yx47TzvBl55+r9bpCK7jX0WB1kVJe\nxrx7iktgZDfwL1GlV1qB9DVtdAcCAf/2Bt3rNokuyVtOulutq68SIbwnCtpbXoOo\nJuiN2wsT98+oWAM0r4XcuYfxhHcvbnYWEDe2qvL2YjHGWWmywH97uTDDRyKiUHDL\n8YFQuk8Net121qSV3CQuEVuID0xpwTkUJlM3Jy/2uLGCjIzEVGZRwbT8v4b45yv7\n0Zg8s3oe/0dVOdSSxj59ld3y11P6W6Kd+se/oa0GlpZCDspXnxQTAxKp5x5Bx+F4\nc9kr/CKZAjiZUzeD2LLUw6DOu/M4GPRl0SOp87yU4wKBgQDOQWPElEbMByErPH0b\nNnRbybzo3dwVq0YIEBketwy+HDMka18H7pwQSQlqCL5V5NTgUbSdgWibkb+vsvdN\nRugAR6FWMKyG9AZWwmLd+zEMHPUoJZFYQvIcfZR8BGNHDtbgtHxY/n/PYVqjnrO9\n6N9hRPEpVeOUMsDPtB07SKC4DwKBgQC6dCoWI90mxwR8SBkVMxW7G6eWM2jen+Ke\nBpDxpo8kTfhKnjGog0TFy3xPmoZXi27BrSprV6FV2sAdbl3v2zdmlF1SXLMTSfwO\npuiCjls3Z45ujOyji5VoUwRuLHo3nk5xmj6DN7AhpHOke4TEFY7q6wkTsBcDqBSr\nPpc8Gt2QswKBgCVNpEqweqF6BKC6PvJGBgN32CfRwHVW1cKtjq2Ec9SKayGCHdzk\nZet4GjDIRgxo56tue5klB5NjZ+TSHHIoidtLGT3qbbm2ttLIM3Nsc/F550kMil4J\nNZq7h7hqXr5CS9C2M+swlFMgi3EeSenmDUidXHSaaR+rkj2+mK7ZMuA3AoGBAJ2I\nBgL8vB3GKlEC7UZPCf4zKE2sE998QJB5Rb8VlXz771rD+3q/pbxj5xyulvCiWqqC\nLwPQXvxVvNlg5TcBBPbDRXGP5rDWYoLSnEGqGwFdmiZnJIwtI8en1GdtZrlVJDux\nMT3WMBbMhfQjdBHjkQOEHwAmV9t8CDKCyG482JQnAoGADtfwpJQnR7qgID1RNsoZ\nYeu1bLdl3pTJRMLfgv6Kyfw321+hIYZdn4XzTvL77+f9CPeRJD09tFahRmnavK5i\nquEHMSAMGqrnzHlTgiojeQPFon4JLwUSdLw6qBJEEK1EmE6Xhgk/G746V0Hup75n\nQPIZfMymsHOsQ0IpSna8MBE=\n-----END PRIVATE KEY-----\n",
+  "client_email": "asepta-test@asepta.iam.gserviceaccount.com",
+  "client_id": "116787436109471380777",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/asepta-test%40asepta.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
