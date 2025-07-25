@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import datetime, date
 from utils.data_loader import load_sales_data
 
-df = load_sales_data(sheet_name="Dane do panelu sprzedaży", worksheet_name="Obrót", 'asepta-4e6acac849fa.json')
+df = load_sales_data(sheet_name="Dane do panelu sprzedaży", worksheet_name="Obrót", json_path="asepta-4e6acac849fa.json")
 today = datetime.today()
 default_start = date(today.year, 1, 1)
 default_end = today
